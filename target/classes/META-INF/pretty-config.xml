@@ -1,0 +1,17 @@
+<pretty-config
+	xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+	<url-mapping id="form-setup">
+		<pattern value="/" />
+		<view-id value="setup_new.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="cadastros">
+		<pattern value="/cadastros" />
+		<view-id value="cadastros.xhtml" />
+	</url-mapping>
+
+</pretty-config>

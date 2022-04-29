@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/_template.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<p:messages id="messages" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<p:card style="width: 25em; margin: 1em auto">
+				<f:facet name="title">Criar Cadastro</f:facet>
+				<div class="ui-fluid">
+					<div class="p-field">
+						<label for="name">Nome</label>
+						<p:inputText value="#{setupBean.setup.name}" id="name" type="text"
+							required="true" requiredMessage="O campo nome é obrigatório" />
+					</div>
+					<div class="p-field">
+						<label for="data">Data de Nascimento</label>
+						<p:outputLabel for="data" />
+						<p:datePicker id="data" value="#{setupBean.setup.data}" />
+					</div>
+					<div class="p-field">
+						<label for="email">Email</label>
+						<p:inputText value="#{setupBean.setup.email}" required="true" id="email"/>
+					</div>
+					<div class="p-field">
+						<label for="senha">Senha</label>
+						<p:password id="senha" value="#{setupBean.setup.senha}"
+							toggleMask="true" redisplay="true" required="true"/>
+					</div>
+				</div>
+				<f:facet name="footer">
+					<p:commandButton action="#{setupBean.save()}" icon="pi pi-check"
+						value="Save" />
+					<p:commandButton icon="pi pi-times" value="Cancel"
+						styleClass="ui-button-secondary" style="margin-left: .5em" />
+				</f:facet>
+			</p:card>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>
